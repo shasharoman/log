@@ -1,6 +1,6 @@
 {
-    "name": "log",
-    "version": "1.0.0",
+    "name": "@shasharoman/log",
+    "version": "1.0.1",
     "description": "log",
     "main": "index.js",
     "directories": {
