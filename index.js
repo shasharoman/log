@@ -66,7 +66,9 @@ class Logger {
         let hour = now.getHours();
         let minute = (now.getMinutes() + '').padStart(2, '0');
         let seconds = (now.getSeconds() + '').padStart(2, '0');
-        let ts = `${year}-${month}-${day} ${hour}:${minute}:${seconds}`;
+        let ms = (now.getMilliseconds() + '').padStart(3, '0');
+
+        let ts = `${year}-${month}-${day} ${hour}:${minute}:${seconds}.${ms}`;
 
         for (let item of this.transports) {
             item.log(LEVEL[level], ts, `[${level}]`, `[${label}]`, ...args);

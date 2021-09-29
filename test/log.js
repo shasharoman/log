@@ -23,9 +23,9 @@ describe('logger', () => {
         await new Promise(resolve => setTimeout(resolve, 10));
 
         let lines = fs.readFileSync(logPath).toString().split('\n');
-        expect(/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2} \[INFO\] \[label\] info$/.test(lines[0])).to.be.equal(true);
-        expect(/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2} \[WARN\] \[label\] warn/.test(lines[1])).to.be.equal(true);
-        expect(/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2} \[ERROR\] \[label\] error/.test(lines[2])).to.be.equal(true);
+        expect(/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}.\d{3} \[INFO\] \[label\] info$/.test(lines[0])).to.be.equal(true);
+        expect(/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}.\d{3} \[WARN\] \[label\] warn/.test(lines[1])).to.be.equal(true);
+        expect(/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}.\d{3} \[ERROR\] \[label\] error/.test(lines[2])).to.be.equal(true);
     });
 });
 
